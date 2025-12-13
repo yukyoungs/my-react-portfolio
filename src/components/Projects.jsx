@@ -1,5 +1,27 @@
 import { useState } from 'react';
 
+// 이미지 로드 실패 시 placeholder를 보여주는 컴포넌트
+const ProjectImage = ({ src, alt, projectId }) => {
+  const [imageError, setImageError] = useState(false);
+
+  if (!src || imageError) {
+    return (
+      <div className="w-full h-full flex items-center justify-center text-white text-6xl font-bold bg-gradient-to-br from-primary-500 to-primary-700">
+        #{projectId}
+      </div>
+    );
+  }
+
+  return (
+    <img
+      src={src}
+      alt={alt}
+      className="w-full h-full object-cover"
+      onError={() => setImageError(true)}
+    />
+  );
+};
+
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
 
@@ -12,6 +34,7 @@ const Projects = () => {
       period: '2024.11.25 ~ 2024.12.25',
       contribution: 'AI-Powered Multi-Platform UI/UX 구현 및 REST API 연동 최적화',
       techStack: ['React', 'Flutter', 'RestAPI', 'Node.js', 'FastAPI', 'EfficientNet B0', 'Docker'],
+      image: '/images/projects/project1.jpg', // 여기에 이미지 경로 추가
       details: [
         'AI 분석 결과 연동 및 시각화: EfficientNet B0 AI 모델의 분석 결과(폐기물 유형, 크기)를 즉시 UI에 반영하고 적합한 스티커 규격을 추천하는 사용자 플로우를 설계했습니다.',
         '멀티 플랫폼 반응형 웹/앱 개발: React를 사용하여 반응형 웹사이트 UI를 구현하고, Flutter로 Android 모바일 앱을 개발하여 사용자 접근성을 극대화했습니다.',
@@ -26,6 +49,7 @@ const Projects = () => {
       period: '2025년 3월 ~ 6월 (인턴 기간)',
       contribution: '안전 제어 로직이 적용된 실시간 IoT 대시보드 및 관제 UI 설계 및 구현',
       techStack: ['React (App/Web UI)', 'Back-end: ControlNode, GlobalScheduler 등 아키텍처 이해'],
+      image: '/images/projects/project2.jpg', // 여기에 이미지 경로 추가
       details: [
         '실시간 데이터 시각화 및 대시보드 구축: 스마트 농장의 온도, 습도, CO₂ 등 핵심 지표를 그래프, 차트, 게이지 형태의 위젯 기반 UI로 구현하여 실시간 상태 모니터링을 지원했습니다.',
         '안전 기반 환경/설비 제어 UI 설계: 주요 설비 제어 시 주사용자 재실 여부(위치 기반) 정보를 확인하고, 외부에 있을 경우 제어 기능을 제한/경고하는 안전 제어 로직이 반영된 UI/UX를 설계했습니다.',
@@ -40,6 +64,7 @@ const Projects = () => {
       period: '2025.09.02 ~ 2025.10.17',
       contribution: 'MSA, Event-Driven Architecture 기반의 안정적인 생체 데이터 처리 파이프라인 구축 및 성능 최적화',
       techStack: ['Spring Boot 3.x', 'MongoDB Atlas', 'MySQL', 'Redis', 'FastAPI', 'TensorFlow', 'Saga Pattern', 'Prometheus', 'Grafana'],
+      image: '/images/projects/project3.jpg', // 여기에 이미지 경로 추가
       details: [
         'MSA 기반 서비스 개발 및 분산 트랜잭션 처리 (Saga): 5개의 Spring Boot 마이크로서비스를 개발했습니다. 회원 탈퇴 시 데이터 정합성 문제를 해결하기 위해 Saga Orchestrator를 구현하고 Outbox 패턴을 적용하여 안전한 분산 트랜잭션을 보장했습니다.',
         '성능 최적화 및 관찰성(Observability) 확보: Prometheus를 통해 시스템 메트릭을 수집하고 Grafana 대시보드를 구축하여 실시간 부하 테스트 결과를 시각적으로 모니터링했습니다. 이를 기반으로 MongoDB 인덱싱 및 Redis 캐싱 전략을 적용하여 데이터 조회 성능을 개선했습니다.',
@@ -55,6 +80,7 @@ const Projects = () => {
       period: '2025.10.27 ~ 2025.12.11',
       contribution: 'SaaS형 멀티테넌트 아키텍처 설계 및 RAG 챗봇 실시간 통신 파이프라인 구축',
       techStack: ['Spring Boot 3.5.7', 'PostgreSQL', 'Redis (Spring Session)', 'gRPC', 'AWS S3 (Presigned URL)', 'WebSocket', 'Next.js', 'QueryDSL'],
+      image: '/images/projects/project4.jpg', // 여기에 이미지 경로 추가
       details: [
         'SaaS형 멀티테넌트 데이터 격리 및 권한 관리 구현: 회사 → 그룹 계층 구조와 top_group_id 기반의 권한별 데이터 격리 로직을 구현했으며, Spring Session + Redis를 활용한 안전한 세션 관리 및 RBAC을 구현했습니다.',
         '실시간 RAG 챗봇 통신 파이프라인 구축: 사용자 요청(WebSocket)을 받아 AI 서버에 gRPC를 통해 고성능으로 전달하고 응답을 되돌려주는 WebSocket → gRPC → Webhook 실시간 메시지 처리 파이프라인을 구축했습니다.',
@@ -80,10 +106,18 @@ const Projects = () => {
               <div
                 key={project.id}
                 onClick={() => setSelectedProject(project)}
-                className="bg-white rounded-xl shadow-lg p-6 cursor-pointer transform transition-all hover:scale-105 hover:shadow-2xl border border-gray-200"
+                className="bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer transform transition-all hover:scale-105 hover:shadow-2xl border border-gray-200"
               >
-                <div className="flex items-start justify-between mb-4">
-                  <div className="flex-1">
+                {/* 프로젝트 이미지 */}
+                <div className="relative h-48 overflow-hidden">
+                  <ProjectImage src={project.image} alt={project.title} projectId={project.id} />
+                  <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full">
+                    <span className="text-primary-600 font-bold text-sm">#{project.id}</span>
+                  </div>
+                </div>
+
+                <div className="p-6">
+                  <div className="mb-4">
                     <h3 className="text-2xl font-bold text-gray-900 mb-2">
                       {project.title}
                     </h3>
@@ -91,10 +125,6 @@ const Projects = () => {
                       {project.subtitle}
                     </p>
                   </div>
-                  <span className="text-4xl text-primary-200 font-bold">
-                    #{project.id}
-                  </span>
-                </div>
 
                 <div className="space-y-2 mb-4">
                   <p className="text-sm text-gray-600">
@@ -125,9 +155,10 @@ const Projects = () => {
                   )}
                 </div>
 
-                <button className="text-primary-600 font-semibold hover:text-primary-700 transition-colors">
-                  자세히 보기 →
-                </button>
+                  <button className="text-primary-600 font-semibold hover:text-primary-700 transition-colors">
+                    자세히 보기 →
+                  </button>
+                </div>
               </div>
             ))}
           </div>
@@ -155,6 +186,11 @@ const Projects = () => {
               >
                 ×
               </button>
+            </div>
+
+            {/* 모달 이미지 */}
+            <div className="relative h-64 overflow-hidden">
+              <ProjectImage src={selectedProject.image} alt={selectedProject.title} projectId={selectedProject.id} />
             </div>
 
             <div className="p-6 space-y-6">

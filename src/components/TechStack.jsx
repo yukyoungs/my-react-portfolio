@@ -1,4 +1,8 @@
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
+
 const TechStack = () => {
+  const [sectionRef, sectionVisible] = useScrollAnimation({ threshold: 0.1 });
+  
   const techData = [
     {
       category: 'Backend',
@@ -39,70 +43,76 @@ const TechStack = () => {
   ];
 
   return (
-    <section id="tech-stack" className="min-h-screen py-20 bg-white">
+    <section id="tech-stack" className="min-h-screen py-20 bg-gradient-to-br from-gray-50 to-blue-50">
       <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-center text-gray-900 mb-4">
+        <div ref={sectionRef} className="max-w-6xl mx-auto">
+          <h2 className={`text-4xl md:text-5xl font-bold text-center text-gray-900 mb-4 transition-all duration-1000 ${
+            sectionVisible ? 'fade-in-down animate-visible' : 'opacity-0 -translate-y-8'
+          }`}>
             Tech Stack
           </h2>
-          <p className="text-center text-gray-600 mb-12 text-lg">
+          <p className={`text-center text-gray-600 mb-12 text-lg transition-all duration-1000 delay-100 ${
+            sectionVisible ? 'fade-in-up animate-visible' : 'opacity-0 translate-y-8'
+          }`}>
             보유한 기술 스택을 분야별로 정리했습니다
           </p>
 
-          <div className="overflow-x-auto">
-            <table className="w-full border-collapse bg-white shadow-lg rounded-lg overflow-hidden">
-              <thead>
-                <tr className="bg-gradient-to-r from-primary-600 to-primary-700 text-white">
-                  <th className="px-6 py-4 text-left font-semibold text-lg border-r border-primary-500">
-                    분야
-                  </th>
-                  <th className="px-6 py-4 text-left font-semibold text-lg border-r border-primary-500">
-                    핵심 기술 (Core)
-                  </th>
-                  <th className="px-6 py-4 text-left font-semibold text-lg">
-                    숙련 기술 (Skilled)
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {techData.map((tech, index) => (
-                  <tr
-                    key={tech.category}
-                    className={`border-b border-gray-200 transition-colors hover:bg-gray-50 ${
-                      index % 2 === 0 ? 'bg-white' : 'bg-gray-50'
-                    }`}
-                  >
-                    <td className="px-6 py-5 font-semibold text-gray-900 border-r border-gray-200 align-top w-32">
-                      {tech.category}
-                    </td>
-                    <td className="px-6 py-5 text-gray-700 border-r border-gray-200 align-top">
-                      {tech.core.split(', ').map((item, i) => (
-                        <span
-                          key={i}
-                          className="inline-block bg-primary-100 text-primary-800 px-3 py-1 rounded-md text-sm font-medium mr-2 mb-2"
-                        >
-                          {item}
-                        </span>
-                      ))}
-                    </td>
-                    <td className="px-6 py-5 text-gray-700 align-top">
-                      {tech.skilled ? (
-                        tech.skilled.split(', ').map((item, i) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {techData.map((tech, index) => (
+              <div
+                key={tech.category}
+                className={`bg-white rounded-xl shadow-lg p-6 border border-gray-200 transition-all duration-500 hover:shadow-xl hover-lift ${
+                  sectionVisible ? 'fade-in-up animate-visible' : 'opacity-0 translate-y-12'
+                }`}
+                style={{ transitionDelay: `${index * 0.1}s` }}
+              >
+                <h3 className="text-xl font-bold text-gray-900 mb-4 pb-3 border-b-2 border-primary-600">
+                  {tech.category}
+                </h3>
+                
+                <div className="space-y-4">
+                  <div>
+                    <h4 className="text-sm font-semibold text-primary-700 mb-2 uppercase tracking-wide">
+                      핵심 기술 (Core)
+                    </h4>
+                    <div className="flex flex-wrap gap-2">
+                      {tech.core && tech.core.trim() ? (
+                        tech.core.split(', ').map((item, i) => (
                           <span
                             key={i}
-                            className="inline-block bg-gray-200 text-gray-700 px-3 py-1 rounded-md text-sm font-medium mr-2 mb-2"
+                            className="inline-block bg-blue-600 text-white px-3 py-1.5 rounded-lg text-sm font-medium transition-all hover:scale-110 hover:shadow-md hover:bg-blue-700 border border-blue-700"
+                            style={{ backgroundColor: '#0284c7', color: '#ffffff' }}
                           >
-                            {item}
+                            {item.trim()}
                           </span>
                         ))
                       ) : (
-                        <span className="text-gray-400">-</span>
+                        <span className="text-gray-400 text-sm">-</span>
                       )}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+                    </div>
+                  </div>
+                  
+                  {tech.skilled && (
+                    <div>
+                      <h4 className="text-sm font-semibold text-gray-600 mb-2 uppercase tracking-wide">
+                        숙련 기술 (Skilled)
+                      </h4>
+                      <div className="flex flex-wrap gap-2">
+                        {tech.skilled.split(', ').map((item, i) => (
+                          <span
+                            key={i}
+                            className="inline-block px-3 py-1.5 rounded-lg text-sm font-medium transition-all hover:scale-110 hover:shadow-md"
+                            style={{ backgroundColor: '#e5e7eb', color: '#1f2937' }}
+                          >
+                            {item.trim()}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>

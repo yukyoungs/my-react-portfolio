@@ -1,4 +1,8 @@
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
+
 const Contact = () => {
+  const [sectionRef, sectionVisible] = useScrollAnimation({ threshold: 0.1 });
+  
   const contactInfo = [
     {
       name: 'GitHub',
@@ -32,25 +36,32 @@ const Contact = () => {
   return (
     <section id="contact" className="min-h-screen py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white">
       <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+        <div ref={sectionRef} className="max-w-4xl mx-auto text-center">
+          <h2 className={`text-4xl md:text-5xl font-bold mb-4 transition-all duration-1000 ${
+            sectionVisible ? 'fade-in-down animate-visible' : 'opacity-0 -translate-y-8'
+          }`}>
             Contact
           </h2>
-          <p className="text-gray-300 mb-12 text-lg">
+          <p className={`text-gray-300 mb-12 text-lg transition-all duration-1000 delay-100 ${
+            sectionVisible ? 'fade-in-up animate-visible' : 'opacity-0 translate-y-8'
+          }`}>
             함께 일할 수 있는 기회를 기다리고 있습니다
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-            {contactInfo.map((contact) => (
+            {contactInfo.map((contact, index) => (
               <a
                 key={contact.name}
                 href={contact.link}
                 target={contact.name !== 'Email' ? '_blank' : '_self'}
                 rel={contact.name !== 'Email' ? 'noopener noreferrer' : ''}
-                className="bg-white/10 backdrop-blur-sm rounded-xl p-8 hover:bg-white/20 transition-all transform hover:scale-105 hover:shadow-2xl border border-white/20"
+                className={`bg-white/10 backdrop-blur-sm rounded-xl p-8 transition-all transform hover:scale-110 hover:shadow-2xl border border-white/20 hover-lift ${
+                  sectionVisible ? 'fade-in-up animate-visible' : 'opacity-0 translate-y-12'
+                }`}
+                style={{ transitionDelay: `${index * 0.15}s` }}
               >
                 <div className="flex flex-col items-center space-y-4">
-                  <div className="bg-primary-600 p-4 rounded-full">
+                  <div className="bg-primary-600 p-4 rounded-full transition-transform hover:rotate-12 hover:scale-110">
                     {contact.icon}
                   </div>
                   <h3 className="text-xl font-semibold">{contact.name}</h3>

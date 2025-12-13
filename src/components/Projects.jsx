@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 // 이미지 로드 실패 시 placeholder를 보여주는 컴포넌트
 const ProjectImage = ({ src, alt, projectId }) => {
@@ -24,6 +25,26 @@ const ProjectImage = ({ src, alt, projectId }) => {
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
+  const [sectionRef, sectionVisible] = useScrollAnimation({ threshold: 0.1 });
+
+  // 모달이 열릴 때 body 스크롤 잠금 및 ESC 키로 닫기
+  useEffect(() => {
+    if (selectedProject) {
+      document.body.style.overflow = 'hidden';
+      const handleEscape = (e) => {
+        if (e.key === 'Escape') {
+          setSelectedProject(null);
+        }
+      };
+      document.addEventListener('keydown', handleEscape);
+      return () => {
+        document.body.style.overflow = 'unset';
+        document.removeEventListener('keydown', handleEscape);
+      };
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+  }, [selectedProject]);
 
   const projects = [
     {
@@ -93,25 +114,33 @@ const Projects = () => {
   return (
     <section id="projects" className="min-h-screen py-20 bg-gradient-to-br from-gray-50 to-blue-50">
       <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-center text-gray-900 mb-4">
+        <div ref={sectionRef} className="max-w-6xl mx-auto">
+          <h2 className={`text-4xl md:text-5xl font-bold text-center text-gray-900 mb-4 transition-all duration-1000 ${
+            sectionVisible ? 'fade-in-down animate-visible' : 'opacity-0 -translate-y-8'
+          }`}>
             Projects
           </h2>
-          <p className="text-center text-gray-600 mb-12 text-lg">
+          <p className={`text-center text-gray-600 mb-12 text-lg transition-all duration-1000 delay-100 ${
+            sectionVisible ? 'fade-in-up animate-visible' : 'opacity-0 translate-y-8'
+          }`}>
             주요 프로젝트 경험을 소개합니다
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {projects.map((project) => (
+            {projects.map((project, index) => (
               <div
                 key={project.id}
                 onClick={() => setSelectedProject(project)}
-                className="bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer transform transition-all hover:scale-105 hover:shadow-2xl border border-gray-200"
+                className={`bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer transform transition-all duration-500 hover:scale-105 hover:shadow-2xl border border-gray-200 hover-lift ${
+                  sectionVisible ? 'fade-in-up animate-visible' : 'opacity-0 translate-y-12'
+                }`}
+                style={{ transitionDelay: `${index * 0.15}s` }}
               >
                 {/* 프로젝트 이미지 */}
-                <div className="relative h-48 overflow-hidden">
+                <div className="relative h-48 overflow-hidden group">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"></div>
                   <ProjectImage src={project.image} alt={project.title} projectId={project.id} />
-                  <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full">
+                  <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full transition-transform group-hover:scale-110 z-20">
                     <span className="text-primary-600 font-bold text-sm">#{project.id}</span>
                   </div>
                 </div>
@@ -168,12 +197,20 @@ const Projects = () => {
       {/* Modal */}
       {selectedProject && (
         <div
-          className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4"
+          className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-[100] p-4"
           onClick={() => setSelectedProject(null)}
+          style={{ 
+            animation: 'fadeIn 0.3s ease-out forwards',
+          }}
         >
           <div
             className="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl"
-            onClick={(e) => e.stopPropagation()}
+            onClick={(e) => {
+              e.stopPropagation();
+            }}
+            style={{ 
+              animation: 'scaleIn 0.3s ease-out forwards',
+            }}
           >
             <div className="sticky top-0 bg-gradient-to-r from-primary-600 to-primary-700 text-white p-6 flex justify-between items-start">
               <div>

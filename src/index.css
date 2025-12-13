@@ -10,3 +10,165 @@
     color: rgb(17 24 39);
   }
 }
+
+@layer utilities {
+  /* 페이드인 애니메이션 */
+  .fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+    opacity: 0;
+  }
+
+  .fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  .fade-in-down {
+    animation: fadeInDown 0.8s ease-out forwards;
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+
+  .fade-in-left {
+    animation: fadeInLeft 0.8s ease-out forwards;
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+
+  .fade-in-right {
+    animation: fadeInRight 0.8s ease-out forwards;
+    opacity: 0;
+    transform: translateX(30px);
+  }
+
+  .fade-in-delay-1 {
+    animation-delay: 0.1s;
+  }
+
+  .fade-in-delay-2 {
+    animation-delay: 0.2s;
+  }
+
+  .fade-in-delay-3 {
+    animation-delay: 0.3s;
+  }
+
+  .fade-in-delay-4 {
+    animation-delay: 0.4s;
+  }
+
+  .animate-visible {
+    opacity: 1;
+    transform: translateY(0) translateX(0);
+  }
+
+  /* 스케일 애니메이션 */
+  .scale-in {
+    animation: scaleIn 0.6s ease-out forwards;
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  /* 타이핑 효과 */
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
+  @keyframes blink-caret {
+    from, to {
+      border-color: transparent;
+    }
+    50% {
+      border-color: #0284c7;
+    }
+  }
+
+  /* 그라데이션 애니메이션 */
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient 15s ease infinite;
+  }
+
+  /* 펄스 효과 */
+  @keyframes pulse-slow {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+
+  .animate-pulse-slow {
+    animation: pulse-slow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  /* 호버 리프트 효과 */
+  .hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

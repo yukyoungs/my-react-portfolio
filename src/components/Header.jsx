@@ -43,7 +43,7 @@ const Header = () => {
             <a
               href="#about-me"
               onClick={(e) => handleNavClick(e, 'about-me')}
-              className="hover:text-primary-600 transition-colors"
+              className="hover:text-primary-600 transition-all transform hover:scale-110"
             >
               송유경
             </a>
@@ -56,10 +56,10 @@ const Header = () => {
                 key={item}
                 href={`#${item.toLowerCase().replace(' ', '-')}`}
                 onClick={(e) => handleNavClick(e, item.toLowerCase().replace(' ', '-'))}
-                className="text-gray-700 hover:text-primary-600 font-medium transition-colors relative group"
+                className="text-gray-700 hover:text-primary-600 font-medium transition-all relative group transform hover:scale-110"
               >
                 {item}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-600 transition-all group-hover:w-full"></span>
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-600 transition-all duration-300 group-hover:w-full"></span>
               </a>
             ))}
           </div>

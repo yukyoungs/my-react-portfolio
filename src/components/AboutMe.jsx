@@ -1,14 +1,30 @@
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
+
 const AboutMe = () => {
+  const [titleRef, titleVisible] = useScrollAnimation({ threshold: 0.2 });
+  const [contentRef, contentVisible] = useScrollAnimation({ threshold: 0.2 });
+  const [buttonRef, buttonVisible] = useScrollAnimation({ threshold: 0.2 });
+
   return (
     <section id="about-me" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-purple-50 pt-20">
       <div className="container mx-auto px-4 py-20">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+          <h1 
+            ref={titleRef}
+            className={`text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight transition-all duration-1000 ${
+              titleVisible ? 'fade-in-up animate-visible' : 'opacity-0 translate-y-8'
+            }`}
+          >
             복잡한 시스템을 견고하게 설계하고 운영하는
             <span className="block text-primary-600 mt-2">풀스택 지향 백엔드 엔지니어</span>
           </h1>
           
-          <div className="mt-12 space-y-6 text-lg md:text-xl text-gray-700 leading-relaxed">
+          <div 
+            ref={contentRef}
+            className={`mt-12 space-y-6 text-lg md:text-xl text-gray-700 leading-relaxed transition-all duration-1000 delay-200 ${
+              contentVisible ? 'fade-in-up animate-visible' : 'opacity-0 translate-y-8'
+            }`}
+          >
             <p className="text-left">
               저는 <strong className="text-gray-900">마이크로서비스 아키텍처(MSA)</strong>와{' '}
               <strong className="text-gray-900">이벤트 주도 아키텍처(EDA)</strong> 기반으로 
@@ -29,7 +45,12 @@ const AboutMe = () => {
             </p>
           </div>
 
-          <div className="mt-12">
+          <div 
+            ref={buttonRef}
+            className={`mt-12 transition-all duration-1000 delay-300 ${
+              buttonVisible ? 'fade-in-up animate-visible' : 'opacity-0 translate-y-8'
+            }`}
+          >
             <a
               href="#contact"
               onClick={(e) => {
@@ -45,7 +66,14 @@ const AboutMe = () => {
                   });
                 }
               }}
-              className="inline-block bg-primary-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-primary-700 transition-all transform hover:scale-105 shadow-lg hover:shadow-xl"
+              className="inline-block px-8 py-4 rounded-lg font-semibold text-lg transition-all transform hover:scale-110 shadow-xl hover:shadow-2xl border-2"
+              style={{ backgroundColor: '#4b5563', color: '#ffffff', borderColor: '#374151' }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = '#374151';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = '#4b5563';
+              }}
             >
               연락하기
             </a>

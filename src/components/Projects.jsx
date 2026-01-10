@@ -216,7 +216,7 @@ const Projects = () => {
             }}
           >
             {/* 모달 이미지 with 제목 오버레이 */}
-            <div className="relative h-64 overflow-hidden">
+            <div className="relative h-80 md:h-96 overflow-hidden">
               <ProjectImage src={selectedProject.image} alt={selectedProject.title} projectId={selectedProject.id} />
               {/* 그라데이션 오버레이 */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>

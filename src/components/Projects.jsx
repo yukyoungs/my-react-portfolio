@@ -51,7 +51,7 @@ const Projects = () => {
       id: 1,
       title: '쓰담쓰담 앱/웹',
       subtitle: 'AI 기반 대형 폐기물 수수료 측정 서비스 (Frontend)',
-      role: '프론트엔드 개발 리드 (기여도 80%)',
+      role: '프론트엔드 개발 리드',
       period: '2024.11.25 ~ 2024.12.25',
       contribution: 'AI-Powered Multi-Platform UI/UX 구현 및 REST API 연동 최적화',
       techStack: ['React', 'Flutter', 'RestAPI', 'Node.js', 'FastAPI', 'EfficientNet B0', 'Docker'],
@@ -69,7 +69,7 @@ const Projects = () => {
       role: '프론트엔드 개발 및 시스템 모니터링 UI 설계 (인턴 참여)',
       period: '2025년 3월 ~ 6월 (인턴 기간)',
       contribution: '안전 제어 로직이 적용된 실시간 IoT 대시보드 및 관제 UI 설계 및 구현',
-      techStack: ['React (App/Web UI)', 'Back-end: ControlNode, GlobalScheduler 등 아키텍처 이해'],
+      techStack: ['Front-end: Flutter(App/Web UI)', 'Back-end: ControlNode, GlobalScheduler 등 아키텍처 이해'],
       image: '/images/projects/project2.png', // 여기에 이미지 경로 추가
       details: [
         '실시간 데이터 시각화 및 대시보드 구축: 스마트 농장의 온도, 습도, CO₂ 등 핵심 지표를 그래프, 차트, 게이지 형태의 위젯 기반 UI로 구현하여 실시간 상태 모니터링을 지원했습니다.',
@@ -101,7 +101,7 @@ const Projects = () => {
       role: '백엔드 API 개발 및 멀티테넌트/보안 아키텍처 구현 (Spring Boot)',
       period: '2025.10.27 ~ 2025.12.11',
       contribution: '인증(Auth) 및 보안 아키텍처 전면 담당, SaaS형 멀티테넌트 아키텍처 설계 및 RAG 챗봇 실시간 통신 파이프라인 구축',
-      techStack: ['Spring Boot 3.5.7', 'PostgreSQL', 'Redis (Spring Session)', 'gRPC', 'AWS S3 (Presigned URL)', 'WebSocket', 'Next.js', 'QueryDSL'],
+      techStack: ['Spring Boot 3.5.7', 'PostgreSQL', 'Redis (Spring Session)', 'gRPC', 'AWS S3 (Presigned URL)', 'WebSocket', 'Next.js', 'QueryDSL', 'React'],
       image: '/images/projects/project4.png', // 여기에 이미지 경로 추가
       details: [
         '인증(Auth) 및 보안 아키텍처 전면 담당: 인증 로직 전반을 전담하여 개발하며, 인증의 중요성과 보안 메커니즘의 복잡성을 깊이 이해하게 되었습니다. Spring Session + Redis를 활용한 세션 관리 시스템을 구축하고, 세션 보안을 위해 HttpOnly 쿠키, SameSite 속성, CSRF 토큰 검증 등을 적용했습니다. 오류 발생 시 하나하나 디버깅하며 해결하는 과정을 통해 보안 로직 구현의 세밀함과 중요성을 실무적으로 체득했습니다.',

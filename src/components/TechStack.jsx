@@ -30,14 +30,14 @@ const TechStack = () => {
     },
     {
       category: 'AI/ML',
-      core: 'FastAPI (AI 서버 연동), TensorFlow 2.x, EfficientNet B0, YAMNet, Azure OpenAI (GPT-4)',
-      skilled: '',
+      core: 'FastAPI (AI 서버 API 연동)',
+      skilled: 'TensorFlow, Azure OpenAI (GPT-4)',
       experienced: '',
     },
     {
       category: 'DevOps & Infra',
-      core: 'Docker, Kubernetes (GKE), Prometheus, Grafana, Terraform (IaC), ArgoCD (GitOps), AWS S3 (Presigned URL)',
-      skilled: 'GCP (Cloud SQL, Memorystore, GKE), Jenkins, Sentry',
+      core: 'Docker, Prometheus, Grafana, AWS S3 (Presigned URL)',
+      skilled: 'Kubernetes, Terraform, GCP (Cloud SQL, Memorystore)',
       experienced: '',
     },
   ];

@@ -18,7 +18,7 @@ const TechStack = () => {
     },
     {
       category: 'Data & DB',
-      core: 'MongoDB (대용량/비정형 데이터), MySQL (Cloud SQL), PostgreSQL, Redis (Cache, Session), TSID',
+      core: 'MongoDB (대용량/비정형 데이터), MySQL (Cloud SQL), PostgreSQL, Redis (Cache/Session), TSID',
       skilled: '',
       experienced: '',
     },

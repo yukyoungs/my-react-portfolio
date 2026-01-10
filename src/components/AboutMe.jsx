@@ -33,9 +33,10 @@ const AboutMe = () => {
             
             <p className="text-left">
               <strong className="text-gray-900">Spring Boot</strong>를 주력으로 활용하여{' '}
-              <strong className="text-gray-900">분산 트랜잭션(Saga Pattern)</strong> 관리, 
-              대용량 실시간 데이터 파이프라인 연동, <strong className="text-gray-900">FastAPI</strong>를 통한 
-              AI 모델(TensorFlow, Azure OpenAI) 연동 경험을 보유하고 있습니다.
+              <strong className="text-gray-900">MSA 기반 서비스 개발</strong>, 
+              데이터 저장 전략 설계(Polyglot Persistence),{' '}
+              <strong className="text-gray-900">성능 최적화(인덱싱, 캐싱)</strong>, 
+              외부 AI 서비스(<strong className="text-gray-900">FastAPI</strong>) API 연동 경험을 보유하고 있습니다.
             </p>
             
             <p className="text-left">

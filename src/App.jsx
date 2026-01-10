@@ -2,7 +2,7 @@ import Header from './components/Header';
 import AboutMe from './components/AboutMe';
 import TechStack from './components/TechStack';
 import Projects from './components/Projects';
-import ProjectReflections from './components/ProjectReflections';
+// import ProjectReflections from './components/ProjectReflections';
 import Contact from './components/Contact';
 import './App.css';
 
@@ -14,7 +14,7 @@ function App() {
         <AboutMe />
         <TechStack />
         <Projects />
-        <ProjectReflections />
+        {/* <ProjectReflections /> */}
         <Contact />
       </main>
       </div>

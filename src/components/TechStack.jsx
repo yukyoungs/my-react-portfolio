@@ -36,8 +36,14 @@ const TechStack = () => {
     },
     {
       category: 'DevOps & Infra',
-      core: 'Docker, Prometheus, Grafana, AWS S3 (Presigned URL)',
+      core: 'Docker, CI/CD (GitHub Actions), Prometheus, Grafana, AWS S3 (Presigned URL)',
       skilled: 'Kubernetes, Terraform, GCP (Cloud SQL, Memorystore)',
+      experienced: '',
+    },
+    {
+      category: '협업 도구',
+      core: 'GitHub (코드 리뷰, Pull Request), Jira',
+      skilled: '',
       experienced: '',
     },
   ];

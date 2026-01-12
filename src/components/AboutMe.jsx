@@ -36,13 +36,22 @@ const AboutMe = () => {
               <strong className="text-gray-900">MSA 기반 서비스 개발</strong>, 
               데이터 저장 전략 설계(Polyglot Persistence),{' '}
               <strong className="text-gray-900">성능 최적화(인덱싱, 캐싱)</strong>, 
-              외부 AI 서비스(<strong className="text-gray-900">FastAPI</strong>) API 연동 경험을 보유하고 있습니다.
+              <strong className="text-gray-900">RDB(MySQL, PostgreSQL)</strong>와{' '}
+              <strong className="text-gray-900">NoSQL(MongoDB, Redis)</strong>을 활용한 데이터 모델링 및 개발,{' '}
+              <strong className="text-gray-900">RESTful API 설계 및 서비스 연동</strong>,{' '}
+              <strong className="text-gray-900">대용량 데이터 처리</strong> 경험을 보유하고 있습니다.
             </p>
             
             <p className="text-left">
-              또한, React와 Flutter를 활용하여 사용자 친화적인 웹/모바일 UI를 직접 구현할 수 있는 
-              풀스택 역량을 바탕으로, 시스템의{' '}
-              <strong className="text-gray-900">프론트엔드부터 인프라, 백엔드 로직까지</strong> 깊이 있게 이해하고 문제를 해결합니다.
+              <strong className="text-gray-900">CI/CD 파이프라인 구축</strong>(GitHub Actions)과{' '}
+              <strong className="text-gray-900">코드 리뷰</strong>(GitHub Pull Request),{' '}
+              <strong className="text-gray-900">협업 도구</strong>(Jira) 활용 경험을 바탕으로, 
+              안정성과 확장성을 고려한 아키텍처 설계 및 비즈니스 변화에 민첩하게 대응할 수 있습니다.
+            </p>
+            
+            <p className="text-left">
+              또한, React를 활용한 백오피스 시스템 개발 경험을 보유하여, 
+              반복적인 업무를 자동화하고 생산성을 높이는 다양한 백오피스 시스템을 개발할 수 있습니다.
             </p>
           </div>
 

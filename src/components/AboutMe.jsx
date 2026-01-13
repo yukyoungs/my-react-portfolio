@@ -34,7 +34,6 @@ const AboutMe = () => {
             <p className="text-left">
               <strong className="text-gray-900">Spring Boot</strong>를 주력으로 활용하여{' '}
               <strong className="text-gray-900">MSA 기반 서비스 개발</strong>, 
-              데이터 저장 전략 설계(Polyglot Persistence),{' '}
               <strong className="text-gray-900">성능 최적화(인덱싱, 캐싱)</strong>, 
               <strong className="text-gray-900">RDB(MySQL, PostgreSQL)</strong>와{' '}
               <strong className="text-gray-900">NoSQL(MongoDB, Redis)</strong>을 활용한 데이터 모델링 및 개발,{' '}

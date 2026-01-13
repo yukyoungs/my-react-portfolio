@@ -58,10 +58,12 @@ const Projects = () => {
       techStack: ['React', 'Flutter', 'RestAPI', 'Node.js', 'FastAPI', 'EfficientNet B0', 'Docker'],
       image: '/images/projects/project1.png', // 여기에 이미지 경로 추가
       details: [
-        'AI 분석 결과 연동 및 시각화: EfficientNet B0 AI 모델의 분석 결과(폐기물 유형, 크기)를 즉시 UI에 반영하고 적합한 스티커 규격을 추천하는 사용자 플로우를 설계했습니다.',
-        '멀티 플랫폼 반응형 웹/앱 개발: React를 사용하여 반응형 웹사이트 UI를 구현하고, Flutter로 Android 모바일 앱을 개발하여 사용자 접근성을 극대화했습니다.',
-        'RESTful API 설계 및 서비스 연동: FastAPI 백엔드와의 REST API 통신 규격을 정의하고 설계했습니다. 비동기 요청 처리, JSON 데이터 파싱, 엔드포인트 예외 처리 로직을 프론트엔드 단에서 구현하여 안정적인 API 연동 환경을 구축했습니다.',
+        '전체 시스템 아키텍처 이해 및 백엔드 협업: 프론트엔드 개발 리드로서 Node.js/Express 백엔드 서버, FastAPI 기반 AI 모델, 데이터베이스 구조를 포함한 전체 시스템 아키텍처를 이해하고, 백엔드 팀과 협업하여 API 스펙을 정의했습니다.',
+        'RESTful API 설계 및 서비스 연동: 백엔드 팀과 협의하여 REST API 통신 규격을 설계하고 정의했습니다. 세션 관리, 사용자 인증, AI 분류 결과 조회 등 다양한 엔드포인트의 요청/응답 구조를 설계하고, 비동기 요청 처리, JSON 데이터 파싱, 엔드포인트 예외 처리 로직을 프론트엔드 단에서 구현하여 안정적인 API 연동 환경을 구축했습니다.',
+        'AI 분석 결과 연동 및 시각화: EfficientNet B0 AI 모델의 분석 결과(폐기물 유형, 크기)를 백엔드를 통해 받아 즉시 UI에 반영하고 적합한 스티커 규격을 추천하는 사용자 플로우를 설계했습니다.',
+        '멀티 플랫폼 반응형 웹/앱 개발: React를 사용하여 반응형 웹사이트 UI를 구현하고, Flutter로 Android 모바일 앱을 개발하여 사용자 접근성을 극대화했습니다. 외부 API(주소 API, 지도 API)와의 연동도 담당했습니다.',
       ],
+      architectureImage: '/images/projects/project1-architecture.png', // 시스템 아키텍처 다이어그램
     },
     {
       id: 2,
@@ -82,13 +84,14 @@ const Projects = () => {
     {
       id: 3,
       title: 'mong (몽) - 수면 분석 플랫폼',
-      subtitle: 'Backend/MSA/EDA',
-      description: '뇌파 데이터를 수집하고 AI를 활용하여 개인의 수면 패턴을 분석하는 헬스케어 플랫폼입니다. 사용자의 수면 데이터를 분석하여 개인화된 수면 리포트와 개선 방안을 제공합니다.',
+      subtitle: 'Backend/MSA/EDA/AI',
+      description: '뇌파 센서를 통해 수집한 EEG 데이터를 MNE 라이브러리로 전처리하고, 전이학습(Transfer Learning)과 파인튜닝(Fine-tuning)을 적용한 AI 모델로 수면 단계(깊은 수면, 얕은 수면, REM)를 판별하는 헬스케어 플랫폼입니다. 수집된 데이터는 Azure OpenAI Agent를 통해 분석되어 개인화된 수면 리포트(일/주/월 단위)와 개선 방안을 제공합니다.',
       role: '백엔드 마이크로서비스 및 분산 아키텍처 구현 (Spring Boot)',
       period: '2025.09.02 ~ 2025.10.17',
       contribution: '회원 탈퇴 로직 주도 구현, MSA 기반 분산 트랜잭션 처리 및 성능 최적화',
       techStack: ['Spring Boot 3.x', 'MongoDB Atlas', 'MySQL', 'Redis', 'FastAPI', 'TensorFlow', 'Saga Pattern', 'Prometheus', 'Grafana', 'GitHub', 'Docker'],
       image: '/images/projects/project3.png', // 여기에 이미지 경로 추가
+      architectureImage: '/images/projects/project3-architecture.png', // 시스템 아키텍처 다이어그램
       details: [
         '회원 탈퇴 로직 구현 및 분산 트랜잭션 처리 (Saga Pattern): 회원 탈퇴 기능을 주도적으로 담당하며 MSA 환경에서의 데이터 정합성 문제를 깊이 고민했습니다. 5개의 마이크로서비스에 걸친 복잡한 탈퇴 프로세스에서 Saga Orchestrator를 제안하고 협의하여, Outbox 패턴을 적용하여 이벤트 기반 통신의 신뢰성을 확보했습니다. 각 서비스별 보상(Compensation) 트랜잭션을 설계하여 실패 시 롤백이 가능하도록 구현했습니다.',
         '데이터 모델링 및 스키마 설계: 대용량 시계열 수면 데이터를 효율적으로 저장하기 위해 MongoDB의 컬렉션 구조와 인덱스 전략을 설계했습니다. MySQL에서는 사용자 정보, 분석 결과 등 관계형 데이터의 정규화 및 외래키 관계를 고려한 스키마를 설계하여 데이터 정합성을 보장했습니다.',
@@ -96,7 +99,7 @@ const Projects = () => {
         'Polyglot Persistence 전략 적용: 대용량의 시계열 수면 데이터를 MongoDB에, 사용자 정보 및 분석 결과 등 관계형 데이터를 MySQL에 분리 저장하는 전략을 적용하여 각 데이터베이스의 장점을 최대한 활용했습니다.',
         'AI 분석 및 리포트 생성 백엔드 지원: AI-Sleep Service (FastAPI)와의 RESTful API 연동을 담당하여, 뇌파 분석 및 Azure OpenAI Agent를 활용한 개인화된 리포트 생성 요청 처리 로직을 구현했습니다.',
       ],
-      reflection: '수면 분석 서비스의 백엔드 개발에 참여하면서, 단순한 기능 구현을 넘어 실제 서비스 환경의 안정적인 운영을 위한 아키텍처를 깊이 고민하는 귀중한 경험을 했습니다. Spring Boot를 주력으로 활용하여 수집된 수면 데이터를 처리하고, 이를 사용자에게 의미 있는 분석 결과로 제공하는 API를 설계 및 구현했습니다.\n\n이 과정에서 가장 크게 깨달은 점은 데이터 처리 파이프라인의 견고성 확보였습니다. 특히 AWS 환경에서 오브젝트 스토리지(S3)에 저장된 파일을 RAG 시스템의 Knowledge Base로 연동할 때, 일반적인 트리거의 부재를 인지하고 Outbox 패턴을 대안으로 검토했습니다. 이는 시스템 신뢰성을 높이기 위해 백엔드 개발자가 비동기 처리와 데이터 일관성을 어떻게 관리해야 하는지를 실무적으로 이해하는 계기가 되었습니다.\n\n또한 MSA 환경에서 분산 트랜잭션의 복잡성을 직접 경험하며, Saga 패턴을 통해 서비스 간 데이터 정합성을 보장하는 방법을 학습했습니다. 회원 탈퇴와 같은 복잡한 비즈니스 시나리오에서 5개의 마이크로서비스 간 데이터 일관성을 보장하기 위해 Saga Orchestrator를 구현하고, Outbox 패턴을 적용하여 이벤트 기반 통신의 신뢰성을 확보했습니다.\n\n성능 최적화와 관찰성(Observability) 확보에도 중점을 두었습니다. Prometheus를 통해 시스템 메트릭을 수집하고 Grafana 대시보드를 구축하여 실시간 부하 테스트 결과를 시각적으로 모니터링했습니다. 이를 기반으로 MongoDB 인덱싱 전략을 수립하고 Redis 캐싱을 도입하여 데이터 조회 성능을 개선했습니다. Polyglot Persistence 전략을 통해 대용량 시계열 수면 데이터는 MongoDB에, 관계형 데이터는 MySQL에 분리 저장하여 각 데이터베이스의 장점을 최대한 활용했습니다.\n\n앞으로도 트래픽과 데이터 증가를 고려한 성능 최적화와 안정적인 데이터 처리를 중심으로, 시스템의 신뢰도를 높이는 백엔드 개발자로 성장해 나가겠습니다.',
+      reflection: '수면 분석 서비스의 백엔드 개발에 참여하면서, 단순한 기능 구현을 넘어 실제 서비스 환경의 안정적인 운영을 위한 아키텍처를 깊이 고민하는 귀중한 경험을 했습니다. Spring Boot를 주력으로 활용하여 수집된 수면 데이터를 처리하고, 이를 사용자에게 의미 있는 분석 결과로 제공하는 API를 설계 및 구현했습니다.\n\n이 프로젝트에서 가장 중요하게 다룬 부분은 MSA 환경에서의 데이터 일관성과 성능 최적화였습니다. 트래픽 패턴을 분석하여 저녁 시간대 쓰기 요청과 낮 시간대 조회 요청을 분리하여 독립적인 서비스로 구성했습니다. 이를 통해 시간대별 트래픽에 따라 쓰기/조회 서비스를 선택적으로 확장/축소하여 자원 효율성을 높이고, 데이터베이스 락 경합을 줄여 조회 성능을 안정적으로 유지할 수 있었습니다.\n\n또한 MSA 환경에서 분산 트랜잭션의 복잡성을 직접 경험하며, Saga 패턴을 통해 서비스 간 데이터 정합성을 보장하는 방법을 학습했습니다. 회원 탈퇴와 같은 복잡한 비즈니스 시나리오에서 5개의 마이크로서비스 간 데이터 일관성을 보장하기 위해 Saga Orchestrator를 구현하고, Outbox 패턴을 적용하여 이벤트 기반 통신의 신뢰성을 확보했습니다. 이 과정에서 각 서비스별 보상(Compensation) 트랜잭션을 설계하여 실패 시 롤백이 가능하도록 구현하면서, 분산 시스템에서의 데이터 일관성 관리의 중요성을 깊이 이해할 수 있었습니다.\n\nCI/CD 파이프라인을 구축한 것도 의미 있는 경험이었습니다. GitHub Actions를 통한 CI 파이프라인으로 컨테이너 이미지를 빌드하고 Container Registry에 업로드하는 자동화된 빌드 프로세스를 구축했습니다. 이를 통해 배포 프로세스의 자동화와 안정성을 확보할 수 있었습니다.\n\nAI 데이터 파이프라인과의 연동도 중요한 부분이었습니다. MNE 라이브러리를 활용하여 EEG 데이터를 전처리하고, 전이학습과 파인튜닝을 적용한 AI 모델로 수면 단계를 판별하는 과정을 백엔드에서 지원했습니다. Azure OpenAI Agent를 활용하여 수면 리포트의 분석 내용과 개선 방안을 생성하는 로직을 구현하면서, AI 서비스와의 통합 방식을 깊이 이해할 수 있었습니다.\n\n성능 최적화와 관찰성(Observability) 확보에도 중점을 두었습니다. Prometheus를 통해 시스템 메트릭을 수집하고 Grafana 대시보드를 구축하여 실시간 부하 테스트 결과를 시각적으로 모니터링했습니다. 이를 기반으로 MongoDB 인덱싱 전략을 수립하고 Redis 캐싱을 도입하여 데이터 조회 성능을 개선했습니다. Polyglot Persistence 전략을 통해 대용량 시계열 수면 데이터는 MongoDB에, 관계형 데이터는 MySQL에 분리 저장하여 각 데이터베이스의 장점을 최대한 활용했습니다.\n\n이 프로젝트를 통해 MSA 아키텍처, 분산 트랜잭션 처리, CI/CD 자동화, AI 서비스 통합 등 엔터프라이즈급 백엔드 시스템의 핵심 기술들을 종합적으로 경험할 수 있었습니다. 앞으로도 트래픽과 데이터 증가를 고려한 성능 최적화와 안정적인 데이터 처리를 중심으로, 시스템의 신뢰도를 높이는 백엔드 개발자로 성장해 나가겠습니다.',
     },
     {
       id: 4,
@@ -292,6 +295,22 @@ const Projects = () => {
                   ))}
                 </ul>
               </div>
+
+              {selectedProject.architectureImage && (
+                <div>
+                  <h4 className="font-semibold text-gray-900 mb-2">시스템 아키텍처</h4>
+                  <div className="bg-gray-50 rounded-lg p-4">
+                    <img 
+                      src={selectedProject.architectureImage} 
+                      alt={`${selectedProject.title} 시스템 아키텍처`}
+                      className="w-full h-auto rounded-lg shadow-md"
+                      onError={(e) => {
+                        e.target.style.display = 'none';
+                      }}
+                    />
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>

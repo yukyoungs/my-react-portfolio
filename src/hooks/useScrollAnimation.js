@@ -34,3 +34,5 @@ export const useScrollAnimation = (options = {}) => {
   return [ref, isVisible];
 };
 
+
+

@@ -37,7 +37,7 @@ const TechStack = () => {
     {
       category: 'DevOps & Infra',
       core: 'Docker, CI/CD (GitHub Actions), Prometheus, Grafana, AWS S3 (Presigned URL)',
-      skilled: 'Kubernetes, Terraform, GCP (Cloud SQL, Memorystore)',
+      skilled: 'Kubernetes, Terraform, GCP (Cloud SQL/Memorystore)',
       experienced: '',
     },
   ];

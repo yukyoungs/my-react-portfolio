@@ -87,13 +87,12 @@ const Projects = () => {
       role: '백엔드 마이크로서비스 및 분산 아키텍처 구현 (Spring Boot)',
       period: '2025.09.02 ~ 2025.10.17',
       contribution: '회원 탈퇴 로직 주도 구현, MSA 기반 분산 트랜잭션 처리 및 성능 최적화',
-      techStack: ['Spring Boot 3.x', 'MongoDB Atlas', 'MySQL', 'Redis', 'FastAPI', 'TensorFlow', 'Saga Pattern', 'Prometheus', 'Grafana', 'GitHub Actions', 'Docker'],
+      techStack: ['Spring Boot 3.x', 'MongoDB Atlas', 'MySQL', 'Redis', 'FastAPI', 'TensorFlow', 'Saga Pattern', 'Prometheus', 'Grafana', 'GitHub', 'Docker'],
       image: '/images/projects/project3.png', // 여기에 이미지 경로 추가
       details: [
-        '회원 탈퇴 로직 구현 및 분산 트랜잭션 처리 (Saga Pattern): 회원 탈퇴 기능을 주도적으로 담당하며 MSA 환경에서의 데이터 정합성 문제를 깊이 고민했습니다. 5개의 마이크로서비스에 걸친 복잡한 탈퇴 프로세스에서 Saga Orchestrator를 설계·구현하고, Outbox 패턴을 적용하여 이벤트 기반 통신의 신뢰성을 확보했습니다. 각 서비스별 보상(Compensation) 트랜잭션을 설계하여 실패 시 롤백이 가능하도록 구현했습니다.',
+        '회원 탈퇴 로직 구현 및 분산 트랜잭션 처리 (Saga Pattern): 회원 탈퇴 기능을 주도적으로 담당하며 MSA 환경에서의 데이터 정합성 문제를 깊이 고민했습니다. 5개의 마이크로서비스에 걸친 복잡한 탈퇴 프로세스에서 Saga Orchestrator를 제안하고 협의하여, Outbox 패턴을 적용하여 이벤트 기반 통신의 신뢰성을 확보했습니다. 각 서비스별 보상(Compensation) 트랜잭션을 설계하여 실패 시 롤백이 가능하도록 구현했습니다.',
         '데이터 모델링 및 스키마 설계: 대용량 시계열 수면 데이터를 효율적으로 저장하기 위해 MongoDB의 컬렉션 구조와 인덱스 전략을 설계했습니다. MySQL에서는 사용자 정보, 분석 결과 등 관계형 데이터의 정규화 및 외래키 관계를 고려한 스키마를 설계하여 데이터 정합성을 보장했습니다.',
         '성능 최적화 및 관찰성(Observability) 확보: Prometheus를 통해 시스템 메트릭을 수집하고 Grafana 대시보드를 구축하여 실시간 부하 테스트 결과를 시각적으로 모니터링했습니다. 이를 기반으로 MongoDB 인덱싱 전략 수립 및 Redis 캐싱을 적용하여 대용량 트래픽 환경에서도 안정적인 데이터 조회 성능을 확보했습니다.',
-        'CI/CD 파이프라인 구축 및 자동화: GitHub Actions를 활용하여 코드 빌드, 테스트, Docker 이미지 빌드 및 배포를 자동화했습니다. 코드 리뷰 프로세스를 통해 팀원들과 협업하며 코드 품질을 향상시켰습니다.',
         'Polyglot Persistence 전략 적용: 대용량의 시계열 수면 데이터를 MongoDB에, 사용자 정보 및 분석 결과 등 관계형 데이터를 MySQL에 분리 저장하는 전략을 적용하여 각 데이터베이스의 장점을 최대한 활용했습니다.',
         'AI 분석 및 리포트 생성 백엔드 지원: AI-Sleep Service (FastAPI)와의 RESTful API 연동을 담당하여, 뇌파 분석 및 Azure OpenAI Agent를 활용한 개인화된 리포트 생성 요청 처리 로직을 구현했습니다.',
       ],

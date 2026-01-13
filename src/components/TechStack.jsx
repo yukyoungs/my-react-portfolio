@@ -40,12 +40,6 @@ const TechStack = () => {
       skilled: 'Kubernetes, Terraform, GCP (Cloud SQL, Memorystore)',
       experienced: '',
     },
-    {
-      category: '협업 도구',
-      core: 'GitHub (코드 리뷰, Pull Request), Jira',
-      skilled: '',
-      experienced: '',
-    },
   ];
 
   return (

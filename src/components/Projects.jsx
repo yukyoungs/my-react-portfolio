@@ -111,6 +111,7 @@ const Projects = () => {
       contribution: '인증(Auth) 및 보안 아키텍처 전면 담당, SaaS형 멀티테넌트 아키텍처 설계 및 RAG 챗봇 실시간 통신 파이프라인 구축',
       techStack: ['Spring Boot 3.5.7', 'PostgreSQL', 'Redis (Spring Session)', 'gRPC', 'AWS S3 (Presigned URL)', 'WebSocket', 'Next.js', 'QueryDSL', 'JPA', 'React', 'GitHub Actions', 'Docker'],
       image: '/images/projects/project4.png', // 여기에 이미지 경로 추가
+      architectureImage: '/images/projects/project4-architecture.png', // 시스템 아키텍처 다이어그램
       details: [
         '인증(Auth) 및 보안 아키텍처 전면 담당: 인증 로직 전반을 전담하여 개발하며, 인증의 중요성과 보안 메커니즘의 복잡성을 깊이 이해하게 되었습니다. Spring Session + Redis를 활용한 세션 관리 시스템을 구축하고, 세션 보안을 위해 HttpOnly 쿠키, SameSite 속성, CSRF 토큰 검증 등을 적용했습니다. 오류 발생 시 하나하나 디버깅하며 해결하는 과정을 통해 보안 로직 구현의 세밀함과 중요성을 실무적으로 체득했습니다.',
         'SaaS형 멀티테넌트 데이터 격리 및 권한 관리 구현: 회사 → 그룹 계층 구조와 top_group_id 기반의 권한별 데이터 격리 로직을 구현했으며, RBAC(Role-Based Access Control)을 구현하여 사용자별 권한에 따른 세밀한 접근 제어를 실현했습니다.',

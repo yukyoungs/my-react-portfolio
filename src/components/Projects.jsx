@@ -112,9 +112,8 @@ const Projects = () => {
       details: [
         '인증(Auth) 및 보안 아키텍처 전면 담당: 인증 로직 전반을 전담하여 개발하며, 인증의 중요성과 보안 메커니즘의 복잡성을 깊이 이해하게 되었습니다. Spring Session + Redis를 활용한 세션 관리 시스템을 구축하고, 세션 보안을 위해 HttpOnly 쿠키, SameSite 속성, CSRF 토큰 검증 등을 적용했습니다. 오류 발생 시 하나하나 디버깅하며 해결하는 과정을 통해 보안 로직 구현의 세밀함과 중요성을 실무적으로 체득했습니다.',
         'SaaS형 멀티테넌트 데이터 격리 및 권한 관리 구현: 회사 → 그룹 계층 구조와 top_group_id 기반의 권한별 데이터 격리 로직을 구현했으며, RBAC(Role-Based Access Control)을 구현하여 사용자별 권한에 따른 세밀한 접근 제어를 실현했습니다.',
-        'RESTful API 설계 및 서비스 연동: 카카오워크 Webhook API, AI 서버와의 gRPC 통신, 프론트엔드와의 REST API 등 다양한 외부 서비스와의 연동을 담당했습니다. API 설계 시 확장성과 유지보수성을 고려한 엔드포인트 구조를 설계했습니다.',
-        '실시간 RAG 챗봇 통신 파이프라인 구축: 사용자 요청(WebSocket)을 받아 AI 서버에 gRPC를 통해 고성능으로 전달하고 응답을 되돌려주는 WebSocket → gRPC → Webhook 실시간 메시지 처리 파이프라인을 구축했습니다.',
-        '대용량 파일 처리를 위한 S3 Presigned URL 도입: 서버 부하 감소를 위해 클라이언트가 AWS S3에 직접 업로드하는 Presigned URL 발급 시스템을 백엔드에서 구현했습니다.',
+        'RESTful API 설계 및 서비스 연동: 프론트엔드와의 REST API 등 다양한 외부 서비스와의 연동을 담당했습니다. API 설계 시 확장성과 유지보수성을 고려한 엔드포인트 구조를 설계했습니다.',
+        '실시간 RAG 챗봇 통신 파이프라인 구축: 사용자 요청(WebSocket)을 받아 AI 서버에 gRPC를 통해 고성능으로 전달하고 응답을 되돌려주는 WebSocket → gRPC → Webhook 실시간 메시지 처리 파이프라인 팀원들과 함께 구축했습니다.',
         '견고한 백엔드 개발 원칙 적용: Presentation → Application → Domain 계층 구조와 UseCase 패턴을 적용하여 비즈니스 로직의 명확성을 높이고 QueryDSL로 쿼리를 최적화했습니다.',
         'CI/CD 파이프라인 구축 및 코드 리뷰: GitHub Actions를 활용한 자동화된 빌드 및 배포 파이프라인을 구축하고, Pull Request 기반 코드 리뷰 프로세스를 통해 팀원들과 협업하며 코드 품질을 향상시켰습니다.',
         'ORM/SQL Mapper를 활용한 Persistence Layer 최적화: JPA와 QueryDSL을 활용하여 복잡한 쿼리를 타입 안전하게 작성하고, N+1 문제 해결 및 쿼리 성능 최적화를 수행했습니다.',

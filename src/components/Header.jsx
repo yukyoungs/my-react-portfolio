@@ -51,7 +51,7 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
-            {['About Me', 'Tech Stack', 'Projects', 'Contact'].map((item) => (
+            {['About Me', 'Experience', 'Tech Stack', 'Projects', 'Contact'].map((item) => (
               <a
                 key={item}
                 href={`#${item.toLowerCase().replace(' ', '-')}`}
@@ -90,7 +90,7 @@ const Header = () => {
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
           <div className="md:hidden mt-4 pb-4 space-y-3">
-            {['About Me', 'Tech Stack', 'Projects', 'Contact'].map((item) => (
+            {['About Me', 'Experience', 'Tech Stack', 'Projects', 'Contact'].map((item) => (
               <a
                 key={item}
                 href={`#${item.toLowerCase().replace(' ', '-')}`}

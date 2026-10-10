@@ -15,8 +15,8 @@ const AboutMe = () => {
               titleVisible ? 'fade-in-up animate-visible' : 'opacity-0 translate-y-8'
             }`}
           >
-            복잡한 시스템을 견고하게 설계하고 운영하는
-            <span className="block text-primary-600 mt-2">풀스택 지향 백엔드 엔지니어</span>
+            운영 데이터로 검증하며,
+            <span className="block text-primary-600 mt-2">안정적인 서비스를 만드는 개발자</span>
           </h1>
           
           <div 
@@ -26,31 +26,14 @@ const AboutMe = () => {
             }`}
           >
             <p className="text-left">
-              저는 <strong className="text-gray-900">마이크로서비스 아키텍처(MSA)</strong>와{' '}
-              <strong className="text-gray-900">이벤트 주도 아키텍처(EDA)</strong> 기반으로 
-              고가용성 서비스를 구축하는 데 특화된 백엔드 엔지니어입니다.
+              인증·인가, 분산 트랜잭션, 성능 최적화처럼 겉으로 드러나지 않지만 서비스의 신뢰를 떠받치는 영역에 집중해 왔습니다.
             </p>
-            
             <p className="text-left">
-              <strong className="text-gray-900">Spring Boot</strong>를 주력으로 활용하여{' '}
-              <strong className="text-gray-900">MSA 기반 서비스 개발</strong>, 
-              <strong className="text-gray-900">성능 최적화(인덱싱, 캐싱)</strong>, 
-              <strong className="text-gray-900">RDB(MySQL, PostgreSQL)</strong>와{' '}
-              <strong className="text-gray-900">NoSQL(MongoDB, Redis)</strong>을 활용한 데이터 모델링 및 개발,{' '}
-              <strong className="text-gray-900">RESTful API 설계 및 서비스 연동</strong>,{' '}
-              <strong className="text-gray-900">대용량 데이터 처리</strong> 경험을 보유하고 있습니다.
+              실제 운영 중인 서비스에서는 운영 데이터를 직접 실측해 <strong className="text-gray-900">7일간 9,622건</strong> 규모의 자동승인 오탐 원인을 찾아 방어 게이트를 설계했고,
+              수면 분석 MSA 프로젝트에서는 인덱싱 → 프로젝션 → 캐싱을 단계별로 측정하며 <strong className="text-gray-900">TPS를 31.5배</strong> 개선했습니다.
             </p>
-            
             <p className="text-left">
-              <strong className="text-gray-900">CI/CD 파이프라인 구축</strong>(GitHub Actions)과{' '}
-              <strong className="text-gray-900">코드 리뷰</strong>(GitHub Pull Request),{' '}
-              <strong className="text-gray-900">협업 도구</strong>(Jira) 활용 경험을 바탕으로, 
-              안정성과 확장성을 고려한 아키텍처 설계 및 비즈니스 변화에 민첩하게 대응할 수 있습니다.
-            </p>
-            
-            <p className="text-left">
-              또한, React를 활용한 백오피스 시스템 개발 경험을 보유하여, 
-              반복적인 업무를 자동화하고 생산성을 높이는 다양한 백오피스 시스템을 개발할 수 있습니다.
+              "동작하는 코드"를 넘어 "왜 그렇게 동작하는지"를 끝까지 확인하는 방식으로 일합니다.
             </p>
           </div>
 

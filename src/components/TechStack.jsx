@@ -6,39 +6,34 @@ const TechStack = () => {
   const techData = [
     {
       category: 'Backend',
-      core: 'Spring Boot 3.x (Java 17), REST API, JPA, QueryDSL, Spring Security, gRPC',
-      skilled: 'Node.js, FastAPI',
+      core: 'Java 17, Spring Boot 3.x, Spring Security, Spring Session, JPA, QueryDSL, REST API',
+      skilled: 'gRPC, WebSocket, FastAPI (AI 서버 연동), Node.js, Azure OpenAI',
       experienced: '',
     },
     {
       category: 'Architecture',
-      core: 'MSA (Microservice Architecture), Event-Driven Architecture (EDA), Saga Pattern (분산 트랜잭션), DDD (Domain-Driven Design)',
+      core: 'MSA, Saga Pattern (Orchestrator), Outbox Pattern, DDD + UseCase',
       skilled: '',
       experienced: '',
     },
     {
       category: 'Data & DB',
-      core: 'MongoDB (대용량/비정형 데이터), MySQL (Cloud SQL), PostgreSQL, Redis (Cache/Session), TSID',
+      core: 'MySQL, PostgreSQL, MongoDB, Redis (Cache / Session)',
       skilled: '',
       experienced: '',
     },
     {
-      category: 'Frontend',
-      core: 'React (웹), Flutter (앱), TypeScript, Next.js 16 (App Router)',
-      skilled: 'React Query, Zustand, Tailwind CSS, Recharts, HTML/CSS',
-      experienced: '',
-    },
-    {
-      category: 'AI/ML',
-      core: 'FastAPI (AI 서버 API 연동)',
-      skilled: 'TensorFlow, Azure OpenAI (GPT-4)',
-      experienced: '',
-    },
-    {
       category: 'DevOps & Infra',
-      core: 'Docker, CI/CD (GitHub Actions), Prometheus, Grafana, AWS S3 (Presigned URL)',
-      skilled: 'Kubernetes, Terraform, GCP (Cloud SQL/Memorystore)',
+      core: 'Docker, GitHub Actions (CI/CD), AWS (EC2 · RDS · S3), Nginx, Prometheus, Grafana',
+      skilled: '',
       experienced: '',
+      note: '팀 프로젝트 인프라 경험 (팀원 구축): Kubernetes (GKE), Terraform, ArgoCD, Kafka · Debezium',
+    },
+    {
+      category: 'Frontend',
+      core: '',
+      skilled: '',
+      experienced: 'React, Flutter, TypeScript, Next.js, TanStack Query, Zustand, Tailwind CSS',
     },
   ];
 
@@ -71,6 +66,7 @@ const TechStack = () => {
                 </h3>
                 
                 <div className="space-y-4">
+                  {tech.core && (
                   <div>
                     <h4 className="text-sm font-semibold text-primary-700 mb-2 uppercase tracking-wide">
                       핵심 기술 (Core)
@@ -91,6 +87,7 @@ const TechStack = () => {
                       )}
                     </div>
                   </div>
+                  )}
                   
                   {tech.skilled && (
                     <div>
@@ -109,6 +106,29 @@ const TechStack = () => {
                         ))}
                       </div>
                     </div>
+                  )}
+
+                  {tech.experienced && (
+                    <div>
+                      <h4 className="text-sm font-semibold text-gray-600 mb-2 uppercase tracking-wide">
+                        경험 있음 (Experienced)
+                      </h4>
+                      <div className="flex flex-wrap gap-2">
+                        {tech.experienced.split(', ').map((item, i) => (
+                          <span
+                            key={i}
+                            className="inline-block px-3 py-1.5 rounded-lg text-sm font-medium transition-all hover:scale-110 hover:shadow-md border"
+                            style={{ backgroundColor: '#ffffff', color: '#374151', borderColor: '#d1d5db' }}
+                          >
+                            {item.trim()}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {tech.note && (
+                    <p className="text-xs text-gray-500">{tech.note}</p>
                   )}
                 </div>
               </div>

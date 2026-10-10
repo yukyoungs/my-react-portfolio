@@ -120,6 +120,7 @@ const Projects = () => {
         '운영 DB와 분리된 QA 검증 환경 구축, 예약 매칭을 행 ID 기준으로 전환하며 268,102건 백필',
       ],
       techStack: ['Next.js 14', 'TypeScript', 'Supabase (PostgreSQL)', 'Vercel', 'TanStack Query', 'Zustand'],
+      image: '/images/projects/litmers.jpg',
     },
     {
       id: 4,
@@ -135,6 +136,7 @@ const Projects = () => {
         'CPU 코어 대비 과다 생성된 스레드 경합(오버서브스크립션)을 해결해 임베딩 연산 11분대 → 1분 22초',
       ],
       techStack: ['Spring Boot 4.x', 'PostgreSQL (RDS)', 'Redis', 'AWS (EC2 · S3)', 'Docker Compose', 'Nginx', 'GitHub Actions'],
+      image: '/images/projects/jobis.jpg',
     },
   ];
 
